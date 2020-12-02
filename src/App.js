@@ -1,14 +1,24 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Player from "./Component/Player/Player";
-import Main from "./Component/Main/Main";
+import Player from "./Component/Player/Player.js";
+import React, { Component } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Homepage from "./Component/Homepage/Homepage";
+import Table from "./Component/Table/Table";
 
-function App() {
-  return (
-    <div className="App">
-      <Main />
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <div>
+          <Switch>
+            <Route path="/" component={Homepage} exact />
+            <Route path="/players" component={Player} exact />
+            <Route path="/Table" component={Table} exact />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
