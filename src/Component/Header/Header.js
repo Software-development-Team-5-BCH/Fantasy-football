@@ -1,12 +1,29 @@
-import React, { Component } from 'react'
-import { auth } from '../../firebase'
+import './Header.css';
+import React from 'react'
 
-export default class Header extends Component {
-    render() {
-        return (
-            <div className='header'>
-                Header
-            </div>
-        )
-    }
+export default function Header(props) {
+
+    const {
+        user,
+        signOut,
+        signInWithGoogle,
+      } = props;
+
+    return (
+        <div className='header'>
+            {user?
+                <>
+                    <p>Hello, {user.displayName}</p>
+                    <button onClick={signOut}>Sign out</button>
+                </>
+                : 
+                <>
+                    <p>Please sign in.</p>
+                    <button onClick={signInWithGoogle}>
+                        Sign in with Google
+                    </button>
+                </>}
+        </div>
+    )
 }
+
