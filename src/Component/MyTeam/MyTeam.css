@@ -1,0 +1,24 @@
+
+.myTeam{
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    padding: 0.5rem;
+    background-color: rgb(204, 204, 204);
+}
+
+.myTeam h2{
+    margin: 0.5rem;
+    text-align: left;
+}
+
+.myTeamPlayer{
+    display: grid;
+    grid-template-columns: auto 1fr 3rem;
+    grid-template-rows: 2rem;
+    align-items: center;
+}
+
+.myTeamPlayer button{
+    background-color: salmon;
+}

@@ -28,4 +28,4 @@ let firebaseAuth = withFirebaseAuth({
     firebaseAppAuth,
 })
 
-export default firebaseAuth 
+export { firebaseAuth, firebase } 

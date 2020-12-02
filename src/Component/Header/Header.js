@@ -1,5 +1,5 @@
 import './Header.css';
-import React from 'react'
+import React,{useEffect} from 'react'
 
 export default function Header(props) {
 
@@ -7,7 +7,7 @@ export default function Header(props) {
         user,
         signOut,
         signInWithGoogle,
-      } = props;
+    } = props;
 
     return (
         <div className='header'>
