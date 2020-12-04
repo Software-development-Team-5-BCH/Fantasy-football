@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "./Table.css";
+import "./table.css";
 
 const API = "https://fantasy.premierleague.com/api/bootstrap-static/";
 const params = {
