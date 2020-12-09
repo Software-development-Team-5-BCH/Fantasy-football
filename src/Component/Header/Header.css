@@ -1,0 +1,18 @@
+.header{
+    padding: 0.5rem;
+    display: grid;
+    height: 3rem;
+    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    grid-gap: 1rem;
+    margin-bottom: 1rem;
+    background-color: rgb(216, 216, 216);
+}
+
+.header a{
+    margin-right: 1rem;
+}
+.header p{
+    margin: 0;
+}
