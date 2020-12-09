@@ -1,5 +1,6 @@
 import './Header.css';
 import React,{useEffect} from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Header(props) {
 
@@ -11,6 +12,11 @@ export default function Header(props) {
 
     return (
         <div className='header'>
+            <nav>
+                <Link to='/'>Home</Link>
+                <Link to='/players'>Players</Link>
+                <Link to='/Table'>Table</Link>
+            </nav>
             {user?
                 <>
                     <p>Hello, {user.displayName}</p>
