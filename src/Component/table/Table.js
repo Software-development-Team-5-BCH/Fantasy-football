@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./Table.css";
 
-const API = "https://fantasy.premierleague.com/api/bootstrap-static/";
+const API =
+  "https://cors-anywhere.herokuapp.com/https://fantasy.premierleague.com/api/bootstrap-static/";
 const params = {
   _limit: 1,
 };
