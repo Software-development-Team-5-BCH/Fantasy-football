@@ -7,8 +7,6 @@ const API = "https://cors-anywhere.herokuapp.com/https://fantasy.premierleague.c
 const params = {
   _limit: 1,
 }
-
-
 class Player extends Component {
   state = {
     league: {
@@ -19,6 +17,7 @@ class Player extends Component {
       // element_types: [],
     },
     isLoading: false,
+
     fname: '',
     sname: '',
     cost: '',
@@ -26,25 +25,47 @@ class Player extends Component {
     form: '',
     points: '',
     image: '',
+
   }
 
   componentDidMount() {
+
     this.setState({ isLaoding: true });
     axios.get(API, { params })
       .then((response) => this.setState({ league: response.data, isLoading: false }));
+    // const data = axios.get(API, { params })
+    //   .then((res => res.json()))
+
+    // console.log(data)
+    // localStorage.setItem("mydata", JSON.stringify(data));
+    // let getData = JSON.parse(localStorage.getItem('mydata'));
+    // this.setState({ league: getData })
+
   }
+
+
   addHandler(id) {
-    const favlist = this.state.league.elements.find((player) => player.id == id);
-    this.setState({
-      fname: favlist.first_name,
-      sname: favlist.second_name,
-      score: favlist.goals_scored,
-      cost: favlist.now_cost,
-      form: favlist.form,
-      points: favlist.total_points,
-      image: favlist.photo,
+    let tablelist = [];
+    const favlist = JSON.stringify(this.state.league.elements.find((player) => player.id == id));
+    console.log(favlist)
+    localStorage.setItem('player', favlist);
+    let detail = JSON.parse(localStorage.getItem("player"))
+    console.log(detail)
+    const data = this.setState({
+      fname: detail.first_name,
+      sname: detail.second_name,
+      score: detail.goals_scored,
+      cost: detail.now_cost,
+      form: detail.form,
+      points: detail.total_points,
+      image: detail.photo,
     });
+    tablelist.push(data);
+    console.log(tablelist)
   }
+
+
+
 
   render() {
     if (this.state.isLoading) { return <p>Loading.....</p> }
@@ -70,7 +91,7 @@ class Player extends Component {
               <p>{items.goals_scored}</p>
               <p>{items.total_points}</p>
               <p>{items.creativity}</p>
-              <img src={items.photo} />
+              <img src={items.photo} alt={items.fname} />
               <div className="add" onClick={() => this.addHandler(items.id)}>+ </div>
             </li>)
           )}</ul>
@@ -79,5 +100,6 @@ class Player extends Component {
     );
   }
 }
+
 
 export default Player;

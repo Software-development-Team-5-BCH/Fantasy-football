@@ -15,6 +15,7 @@ const Favourite = ({ fname, sname, score, cost, form, points, image }) => {
         </tr>
       </thead>
       <tbody>
+
         <tr>
           <th>{fname} {sname}</th>
           <th>{score}</th>
