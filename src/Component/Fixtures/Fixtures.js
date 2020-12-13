@@ -40,6 +40,10 @@ class Fixtures extends React.Component {
     return (
       <ul className="fixtures">
         <h2>{this.props.league}</h2>
+        <div className="last-update">
+          Last update:{" "}
+          {`${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`}
+        </div>
         {this.state.matches.map((el) => (
         <div className="results" key={el.id}>
             <div>Matchday: {el.matchday}</div>
@@ -50,10 +54,6 @@ class Fixtures extends React.Component {
             <div className="status">Match status: {el.status}</div>
         </div>
         ))}
-        <li className="last-update">
-          Last update:{" "}
-          {`${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`}
-        </li>
       </ul>
     );
   }

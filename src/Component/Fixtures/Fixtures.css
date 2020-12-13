@@ -17,3 +17,8 @@ h2 {
   font-style: italic;
   font-weight: bold;
 }
+
+.last-update {
+  margin-bottom: 1rem;
+  font-style: italic;
+}
