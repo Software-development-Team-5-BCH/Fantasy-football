@@ -16,6 +16,7 @@ export default function Header(props) {
                 <Link to='/'>Home</Link>
                 <Link to='/players'>Players</Link>
                 <Link to='/Table'>Table</Link>
+                <Link to='/fixtures'>Fixtures</Link>
             </nav>
             {user?
                 <>
