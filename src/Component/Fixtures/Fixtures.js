@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import './Fixtures.css';
 
 class Fixtures extends React.Component {
   constructor(props) {
@@ -38,19 +39,16 @@ class Fixtures extends React.Component {
 
     return (
       <ul className="fixtures">
-        <li className="results">{this.props.league}</li>
+        <h2>{this.props.league}</h2>
         {this.state.matches.map((el) => (
-          <li key={el.homeTeam.name} className="table-row">
-            <ul>
-              <li key="0" className="pos">
-                {el.score.fullTime.homeTeam}
-              </li>
-              <li key="1">
-              {el.awayTeam.name}
-              </li>
-              <li key="2">{el.score.fullTime.awayTeam}</li>
-            </ul>
-          </li>
+        <div className="results" key={el.id}>
+            <div>Matchday: {el.matchday}</div>
+            <div className="status">Match status: {el.status}</div>
+            <div className="team">{el.homeTeam.name}</div>
+            <div className="score">{el.score.fullTime.homeTeam}</div>
+            <div className="team">{el.awayTeam.name}</div>
+            <div className="score">{el.score.fullTime.awayTeam}</div>
+        </div>
         ))}
         <li className="last-update">
           Last update:{" "}
