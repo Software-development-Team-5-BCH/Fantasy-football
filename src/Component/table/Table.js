@@ -74,7 +74,9 @@ class Table extends React.Component {
         ))}
         <li className="last-update">
           Last update:{" "}
-          {`${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`}
+          {`${d.getHours()}:${d.getMinutes()} ${d.getDate()} ${
+            months[d.getMonth()]
+          } ${d.getFullYear()}`}
         </li>
       </ul>
     );
