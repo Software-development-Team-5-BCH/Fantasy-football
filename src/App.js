@@ -23,6 +23,7 @@ import { firebaseAuth } from "./firebase";
 import MyTeam from "./Component/MyTeam/MyTeam";
 import Header from "./Component/Header/Header";
 import tableRender from "./Component/Table/tableRender";
+import FixturesRender from './Component/Fixtures/FixturesRender';
 
 class App extends Component {
   render() {
@@ -39,6 +40,7 @@ class App extends Component {
             <Route path="/" component={Homepage} exact />
             <Route path="/players" component={Player} exact />
             <Route path="/table" component={tableRender} exact />
+            <Route path="/fixtures" component={FixturesRender} exact />
           </Switch>
         </div>
         {user && <MyTeam user={user} />}
