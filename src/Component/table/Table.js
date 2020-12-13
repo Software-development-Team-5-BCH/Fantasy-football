@@ -2,11 +2,14 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./Table.css";
 
-const API = "http://api.football-data.org/v2/competitions/2021/standings";
+const API = "https://data-ui.football-data.org/fd/competitions/2021/table";
 const params = {
   _limit: 1,
 };
 
+const whatever = API;
+
+// http://api.football-data.org/v2/competitions/2021/standings
 let config = {};
 
 class Table extends Component {
@@ -39,8 +42,9 @@ class Table extends Component {
   }
   render() {
     console.log(this.state.premierLeague);
-    console.log(this.state.premierLeague.standings);
-    console.log(this.state.premierLeague.standings[0]);
+    console.log(
+      JSON.parse(this.state.premierLeague.standings[0].table[1].position)
+    );
     if (this.state.isLoading) {
       return <p>Loading.....</p>;
     }
