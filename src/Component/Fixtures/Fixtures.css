@@ -4,7 +4,7 @@ h2 {
 
 .results {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   padding: 1rem;
   margin-right: 3rem;
 }
@@ -15,4 +15,5 @@ h2 {
 
 .team {
   font-style: italic;
+  font-weight: bold;
 }

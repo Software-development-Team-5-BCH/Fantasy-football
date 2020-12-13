@@ -43,11 +43,11 @@ class Fixtures extends React.Component {
         {this.state.matches.map((el) => (
         <div className="results" key={el.id}>
             <div>Matchday: {el.matchday}</div>
-            <div className="status">Match status: {el.status}</div>
             <div className="team">{el.homeTeam.name}</div>
             <div className="score">{el.score.fullTime.homeTeam}</div>
             <div className="team">{el.awayTeam.name}</div>
             <div className="score">{el.score.fullTime.awayTeam}</div>
+            <div className="status">Match status: {el.status}</div>
         </div>
         ))}
         <li className="last-update">
