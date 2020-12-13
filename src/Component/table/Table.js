@@ -1,22 +1,10 @@
-<<<<<<< HEAD
-import React, { Component } from "react";
-import axios from "axios";
-import "./Table.css";
-
-const API =
-  "https://cors-anywhere.herokuapp.com/https://fantasy.premierleague.com/api/bootstrap-static/";
-const params = {
-  _limit: 1,
-};
-=======
 import React from "react";
 import PropTypes from "prop-types";
-import "./Table.css";
+import "./table.css";
 
 class Table extends React.Component {
   constructor(props) {
     super(props);
->>>>>>> table-alt
 
     this.state = {
       table: props.standings[0].table,
@@ -86,7 +74,9 @@ class Table extends React.Component {
         ))}
         <li className="last-update">
           Last update:{" "}
-          {`${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`}
+          {`${d.getHours()}:${d.getMinutes()} ${d.getDate()} ${
+            months[d.getMonth()]
+          } ${d.getFullYear()}`}
         </li>
       </ul>
     );
