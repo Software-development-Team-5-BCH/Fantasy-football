@@ -26,8 +26,10 @@ import tableRender from "./Component/Table/tableRender";
 import FixturesRender from './Component/Fixtures/FixturesRender';
 
 class App extends Component {
+
   render() {
     const { user, signOut, signInWithGoogle } = this.props;
+
     return (
       <BrowserRouter>
         <Header
@@ -38,12 +40,12 @@ class App extends Component {
         <div>
           <Switch>
             <Route path="/" component={Homepage} exact />
-            <Route path="/players" component={Player} exact />
+            <Route path="/players" render={(props)=><Player {...props} user={user}/>}/>
             <Route path="/table" component={tableRender} exact />
             <Route path="/fixtures" component={FixturesRender} exact />
           </Switch>
         </div>
-        {user && <MyTeam user={user} />}
+        {/* {user && <MyTeam user={user} />} */}
       </BrowserRouter>
     );
   }

@@ -1,15 +1,28 @@
 
 .myTeam{
     position: absolute;
-    top: 5rem;
-    right: 0;
+    top: 0rem;
+    right: 15rem;
     padding: 0.5rem;
     background-color: rgb(204, 204, 204);
+    height: 3rem;
+    overflow: hidden;
 }
 
-.myTeam h2{
-    margin: 0.5rem;
+.myTeam:hover{
+    height: auto;
+}
+
+.myTeamHeader{
+    display: flex;
+    align-items: center;
     text-align: left;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    height: 3rem;
+    margin-bottom: 2rem;
+    padding-right: 1rem;
 }
 
 .myTeamPlayer{

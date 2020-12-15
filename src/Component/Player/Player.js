@@ -2,11 +2,14 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./Player.css";
 import Favourite from "../Favourite/favourite";
+import { firebase } from '../../firebase'
+import MyTeam from '../MyTeam/MyTeam'
 const API =
   "https://cors-anywhere.herokuapp.com/https://fantasy.premierleague.com/api/bootstrap-static/";
 const params = {
   _limit: 1,
 };
+
 
 class Player extends Component {
   state = {
@@ -25,6 +28,7 @@ class Player extends Component {
     form: "",
     points: "",
     image: "",
+    user:null
   };
 
   componentDidMount() {
@@ -35,6 +39,7 @@ class Player extends Component {
         this.setState({ league: response.data, isLoading: false })
       );
   }
+
   addHandler(id) {
     const favlist = this.state.league.elements.find(
       (player) => player.id == id
@@ -48,9 +53,23 @@ class Player extends Component {
       points: favlist.total_points,
       image: favlist.photo,
     });
+
+    this.addToUserTeam(favlist)
+  }
+
+  async addToUserTeam(favlist){
+    const db = firebase.firestore();
+    let userId = firebase.auth().currentUser.uid
+    let userInfo = await db.collection('users').doc(userId).get()
+    if(!userInfo) return
+    let data = userInfo.data()
+    let updatedTeam = [...data.team,`${favlist.first_name} ${favlist.second_name} ${favlist.total_points}` ]
+    let newData = {team: updatedTeam}    
+    await db.collection('users').doc(userId).set(newData)
   }
 
   render() {
+
     if (this.state.isLoading) {
       return <p>Loading.....</p>;
     }
@@ -86,6 +105,7 @@ class Player extends Component {
             ))}
           </ul>
         </div>
+        {this.props.user && <MyTeam user={{...this.props.user}} />}
       </div>
     );
   }

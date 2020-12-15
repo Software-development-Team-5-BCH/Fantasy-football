@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Homepage extends Component {
   render() {
-    return <h1>Hello this is our homepage</h1>;
+    return <h1 className='homePage'>Fantasy Football</h1>;
   }
 }
 

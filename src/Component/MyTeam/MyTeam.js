@@ -10,17 +10,18 @@ export default function MyTeam({user}) {
 
     useEffect(() => {
         if(user){
-                setIsLoading(true)
-                const db = firebase.firestore();
-                let userId = firebase.auth().currentUser.uid
-                db.collection('users').doc(userId).get()        
-                    .then((data) => {
-                        let teamData = data.data()
-                        if(teamData){
-                            setMyTeam(teamData.team)
-                            setIsLoading(false)
-                        }
-                    })      
+            console.log('update')
+            setIsLoading(true)
+            const db = firebase.firestore();
+            let userId = firebase.auth().currentUser.uid
+            db.collection('users').doc(userId).get()        
+                .then((data) => {
+                    let teamData = data.data()
+                    if(teamData){
+                        setMyTeam(teamData.team)
+                        setIsLoading(false)
+                    }
+                })      
         }   
     }, [user])
 
@@ -50,13 +51,13 @@ export default function MyTeam({user}) {
 
     return (
         <div className='myTeam'>
-            <h2>My Team</h2>
+            <div className='myTeamHeader'><h3>{`My Team (${myTeam.length} players)`}</h3><i>&#x25BC;</i> </div>
             <input value={newPlayer} type='text' onChange={e => setNewPlayer(e.target.value)}/>
             <button onClick={handleAddToMyTeam}>Add new player</button>
             {isLoading && <div>Loading...</div>}
-            {myTeam.map(player =>
-                <div className='myTeamPlayer' key={player}>
-                    <label>Name: </label>
+            {myTeam.map((player,index) =>
+                <div className='myTeamPlayer' key={index}>
+                    <label></label>
                     <p>{player}</p>
                     <button onClick={e => handleDeletePlayer(player)} >X</button>
                 </div>
