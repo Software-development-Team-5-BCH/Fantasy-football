@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Fantasy-football/static/css/main.0e46d54c.chunk.css",
-    "main.js": "/Fantasy-football/static/js/main.6b75cbd0.chunk.js",
-    "main.js.map": "/Fantasy-football/static/js/main.6b75cbd0.chunk.js.map",
+    "main.css": "/Fantasy-football/static/css/main.22f5de53.chunk.css",
+    "main.js": "/Fantasy-football/static/js/main.62db644d.chunk.js",
+    "main.js.map": "/Fantasy-football/static/js/main.62db644d.chunk.js.map",
     "runtime-main.js": "/Fantasy-football/static/js/runtime-main.672d2a16.js",
     "runtime-main.js.map": "/Fantasy-football/static/js/runtime-main.672d2a16.js.map",
-    "static/js/2.25d8d2ee.chunk.js": "/Fantasy-football/static/js/2.25d8d2ee.chunk.js",
-    "static/js/2.25d8d2ee.chunk.js.map": "/Fantasy-football/static/js/2.25d8d2ee.chunk.js.map",
+    "static/js/2.b4bccc61.chunk.js": "/Fantasy-football/static/js/2.b4bccc61.chunk.js",
+    "static/js/2.b4bccc61.chunk.js.map": "/Fantasy-football/static/js/2.b4bccc61.chunk.js.map",
     "index.html": "/Fantasy-football/index.html",
-    "static/css/main.0e46d54c.chunk.css.map": "/Fantasy-football/static/css/main.0e46d54c.chunk.css.map",
-    "static/js/2.25d8d2ee.chunk.js.LICENSE.txt": "/Fantasy-football/static/js/2.25d8d2ee.chunk.js.LICENSE.txt"
+    "static/css/main.22f5de53.chunk.css.map": "/Fantasy-football/static/css/main.22f5de53.chunk.css.map",
+    "static/js/2.b4bccc61.chunk.js.LICENSE.txt": "/Fantasy-football/static/js/2.b4bccc61.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.672d2a16.js",
-    "static/js/2.25d8d2ee.chunk.js",
-    "static/css/main.0e46d54c.chunk.css",
-    "static/js/main.6b75cbd0.chunk.js"
+    "static/js/2.b4bccc61.chunk.js",
+    "static/css/main.22f5de53.chunk.css",
+    "static/js/main.62db644d.chunk.js"
   ]
 }
