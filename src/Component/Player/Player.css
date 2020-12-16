@@ -39,3 +39,11 @@
   box-shadow: 0 0 5px rgb(177, 177, 177);
   cursor: pointer;
 }
+
+.myclub-Btn {
+  padding: 1rem;
+  margin: 1rem;
+  color: White;
+  font-weight: bold;
+  background-color: blue;
+}

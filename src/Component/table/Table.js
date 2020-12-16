@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from "./node_modules/react";
+import PropTypes from "./node_modules/prop-types";
 import "./table.css";
 
 class Table extends React.Component {
@@ -76,7 +76,7 @@ class Table extends React.Component {
           Last update:{" "}
           {`${d.getHours()}:${d.getMinutes()} ${d.getDate()} ${
             months[d.getMonth()]
-          } ${d.getFullYear()}`}
+            } ${d.getFullYear()}`}
         </li>
       </ul>
     );

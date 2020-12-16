@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./Player.css";
 import Favourite from "../Favourite/favourite";
+import MyClubs from "../Club/Club"
 import { firebase } from '../../firebase'
 import MyTeam from '../MyTeam/MyTeam'
 const API =
@@ -15,11 +16,9 @@ class Player extends Component {
   state = {
     league: {
       events: [],
-      // teams: [],
       elements: [],
-      // element_stats: [],
-      // element_types: [],
     },
+    listClub: false,
     isLoading: false,
     fname: "",
     sname: "",
@@ -28,7 +27,7 @@ class Player extends Component {
     form: "",
     points: "",
     image: "",
-    user:null
+    user: null
   };
 
   componentDidMount() {
@@ -57,14 +56,19 @@ class Player extends Component {
     this.addToUserTeam(favlist)
   }
 
-  async addToUserTeam(favlist){
+  clubHandler() {
+    console.log('Hello');
+    this.setState({ listClub: true });
+  }
+
+  async addToUserTeam(favlist) {
     const db = firebase.firestore();
     let userId = firebase.auth().currentUser.uid
     let userInfo = await db.collection('users').doc(userId).get()
-    if(!userInfo) return
+    if (!userInfo) return
     let data = userInfo.data()
-    let updatedTeam = [...data.team,`${favlist.first_name} ${favlist.second_name} ${favlist.total_points}` ]
-    let newData = {team: updatedTeam}    
+    let updatedTeam = [...data.team, `${favlist.first_name} ${favlist.second_name} ${favlist.total_points}`]
+    let newData = { team: updatedTeam }
     await db.collection('users').doc(userId).set(newData)
   }
 
@@ -85,6 +89,8 @@ class Player extends Component {
           image={this.state.image}
         />
 
+        <button className="myclub-Btn" onClick={() => this.clubHandler()}>Search by Club</button>
+        {this.state.listClub && < MyClubs include={this.addHandler} />}
         <div>
           <h2>Player list</h2>
           <ul className="playerslist">
@@ -105,10 +111,12 @@ class Player extends Component {
             ))}
           </ul>
         </div>
-        {this.props.user && <MyTeam user={{...this.props.user}} />}
+        {this.props.user && <MyTeam user={{ ...this.props.user }} />}
       </div>
     );
   }
 }
 
 export default Player;
+
+

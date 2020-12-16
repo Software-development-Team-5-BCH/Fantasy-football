@@ -40,7 +40,7 @@ class App extends Component {
         <div>
           <Switch>
             <Route path="/" component={Homepage} exact />
-            <Route path="/players" render={(props)=><Player {...props} user={user}/>}/>
+            <Route path="/players" render={(props) => <Player {...props} user={user} />} />
             <Route path="/table" component={tableRender} exact />
             <Route path="/fixtures" component={FixturesRender} exact />
           </Switch>
