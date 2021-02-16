@@ -18,7 +18,7 @@ export default function Header(props) {
                 <Link to='/Table'>Table</Link>
                 <Link to='/fixtures'>Fixtures</Link>
             </nav>
-            {user?
+            {/* {user?
                 <>
                     <p>Hello, {user.displayName}</p>
                     <button onClick={signOut}>Sign out</button>
@@ -29,7 +29,7 @@ export default function Header(props) {
                     <button onClick={signInWithGoogle}>
                         Sign in with Google
                     </button>
-                </>}
+                </>} */}
         </div>
     )
 }
