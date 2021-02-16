@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import Api from "../lib/api";
 import Table from "./Table";
 
@@ -36,7 +36,7 @@ class League extends React.Component {
   }
 
   getFetchUrl() {
-    const url = `http://api.football-data.org/v2/competitions/PL/standings/`;
+    const url = `https://api.football-data.org/v2/competitions/PL/standings/`;
 
     return url;
   }
